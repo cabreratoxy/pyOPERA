@@ -1,0 +1,21 @@
+services:
+  pyopera:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    # ports:
+    #   - "5000:5000"
+    #   - "5678:5678"
+  # redis:
+  #   image: "redis:alpine"
+
+  
+  # lint:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: autopep8 --in-place --recursive .
+    
+
