@@ -1,6 +1,3 @@
-import unittest
-
-class TestNothing(unittest.TestCase):
-
+class TestNothing:
     def test_absolutely_nothing(self):
-        self.assertTrue(True)
+        assert True == True
