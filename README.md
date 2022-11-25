@@ -9,7 +9,9 @@ poetry run black .
 poetry run isort .  
 poetry run pylint $(find . -name "*.py" | xargs)  
 poetry run pytest tests  
-poetry run coverage run -m pytest tests    
+poetry run coverage run -m pytest tests  
+
+docker run --rm pyopera_pyopera /bin/bash -c 'poetry run coverage run -m pytest tests'  
 ```
 
 ~~TODO: Create a python package around the Matlab package (the base files) using Poetry~~  
@@ -20,7 +22,8 @@ TODO: Start adding the wrapper code and files
 TODO: Benchmarking with airspeed velocity  
 ~~TODO: Formatting/Linting/Coverage~~
 ~~TODO: Choose between Pytest an Unittest~~ 
-
+TODO: Don't repeat the library name in the DOckerfile  
+TODO: Automate black, isort, pylint, coverage, pytest on build or push.
 
 
 

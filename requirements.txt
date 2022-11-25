@@ -3,3 +3,4 @@ isort
 pylint
 coverage
 pytest
+# looking for libOPERA_Py? It is built from source in the image.
