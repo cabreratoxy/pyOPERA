@@ -1,8 +1,8 @@
 # pyOPERA
 Full python implementation of the NIH OPERA suite of models  
-docker run -it -v %cd%:/app --rm pyopera_pyopera /bin/bash
+docker run -it -v %cd%:/app --rm pyopera_pyopera /bin/bash  
 docker compose -f docker-compose.yml build  
-docker run --rm pyopera_pyopera ~/.local/share/pypoetry/venv/bin/poetry run coverage run -m pytest tests
+docker run --rm pyopera_pyopera ~/.local/share/pypoetry/venv/bin/poetry run coverage run -m pytest tests  
 
 ```
 poetry run python -m pip install -r requirements.txt  
@@ -21,11 +21,8 @@ TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)
 TIDO: Documentation using Sphinx (make sure original repo/builders are credited)  
 TODO: Start adding the wrapper code and files  
 TODO: Benchmarking with airspeed velocity  
-~~TODO: Formatting/Linting/Coverage~~
-~~TODO: Choose between Pytest an Unittest~~ 
+~~TODO: Formatting/Linting/Coverage~~  
+~~TODO: Choose between Pytest an Unittest~~  
 TODO: Don't repeat the library name in the DOckerfile  
-TODO: Automate black, isort, pylint, coverage, pytest on build or push.
-TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now
-
-
-
+TODO: Automate black, isort, pylint, coverage, pytest on build or push.  
+TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
