@@ -7,7 +7,8 @@ RUN pip install -r requirements.txt
 VOLUME /app
 
 COPY . .
-RUN apt-get update && apt-get install zip unzip libxtst6 libxt6 default-jre wget -y
+RUN apt-get update && apt-get install zip unzip libxtst6 libxt6 default-jre wget curl -y
+RUN curl -sSL https://install.python-poetry.org | python3 -
 RUN wget https://github.com/NIEHS/OPERA/releases/download/v2.9.1/libOPERA2.9_Py.tar.gz
 
 RUN tar -xvf libOPERA2.9_Py.tar.gz
@@ -18,3 +19,4 @@ RUN python setup.py install
 # RUN mv /usr/local/bin/OPERA/application/libOPERA_Py /app/libOPERA_Py
 ENV XAPPLRESDIR /usr/local/MATLAB/MATLAB_Runtime/v912/X11/app-defaults
 ENV LD_LIBRARY_PATH /usr/local/MATLAB/MATLAB_Runtime/v912/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v912/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v912/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v912/sys/opengl/lib/glnxa64
+WORKDIR /app
