@@ -26,4 +26,4 @@ TODO: Benchmarking with airspeed velocity
 TODO: Don't repeat the library name in the DOckerfile  
 TODO: Automate black, isort, pylint, coverage, pytest on build or push.  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
-TODO: Auto docstring generating?
+~~TODO: Auto docstring generating? -- used autodocstring extension for vscode~~  
