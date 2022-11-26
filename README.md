@@ -19,11 +19,11 @@ docker run --rm pyopera_pyopera /bin/bash -c 'poetry run coverage run -m pytest 
 TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)  
 ~~TODO: Auto semantic versioning with poetry too~~  
 TIDO: Documentation using Sphinx (make sure original repo/builders are credited)  
-TODO: Start adding the wrapper code and files  
+TODO: Start adding the wrapper code and files - in progress    
 TODO: Benchmarking with airspeed velocity  
 ~~TODO: Formatting/Linting/Coverage~~  
 ~~TODO: Choose between Pytest an Unittest~~  
-TODO: Don't repeat the library name in the DOckerfile  
+TODO: Don't repeat the library name in the Dockerfile  
 TODO: Automate black, isort, pylint, coverage, pytest on build or push.  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
 ~~TODO: Auto docstring generating? -- used autodocstring extension for vscode~~  
