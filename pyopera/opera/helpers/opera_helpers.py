@@ -8,7 +8,6 @@ def format_endpoints_input(endpoints: list) -> str:
         endpoints (list): list of endpoints requested
 
     Returns:
-        str: endpoints with dashes that could be used on a CLI
+        list: endpoints with dashes that could be used on a CLI
     """
-    dashed_endpoints = [f"-{endpoint}" for endpoint in endpoints]
-    return ",".join(dashed_endpoints)
+    return [f"-{endpoint}" for endpoint in endpoints]
