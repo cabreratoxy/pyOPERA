@@ -11,17 +11,25 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Check Lint/Formatting/etc
+          name: Lint/Formatting/Testing/Coverage
           command: |
             black . --check
             isort --check --diff .
             pylint $(find . -name "*.py" | xargs)
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85
-      - store_artifacts:
-          path: htmlcov
+      # - run:
+      #     name: Deploy to Test Pypi
+      #     command: 
+
+  # deploy-to-testpy:
+  #   docker:
+  #     - image: cabreratoxy/pyopera:0.0.1
+  #   steps:
+  #     - checkout
+
 
 workflows:
-  sample:
+  test-package:
     jobs:
       - build-and-test
