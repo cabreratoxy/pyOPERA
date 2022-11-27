@@ -25,7 +25,7 @@ TODO: Benchmarking with airspeed velocity
 ~~TODO: Formatting/Linting/Coverage~~  
 ~~TODO: Choose between Pytest an Unittest~~  
 TODO: Don't repeat the library name in the Dockerfile  
-TODO: Automate black, isort, pylint, coverage, pytest on build or push.  
+TODO: Automate black, isort, pylint, coverage, pytest on build or push. - just have to finish coverage  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
 ~~TODO: Auto docstring generating? -- used autodocstring extension for vscode~~  
-TODO: How to autobuild the base image the CI/CD will work with  
+~~TODO: How to autobuild the base image the CI/CD will work with - could not be done~~  
