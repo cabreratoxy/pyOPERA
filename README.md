@@ -3,6 +3,7 @@ Full python implementation of the NIH OPERA suite of models
 docker run -it -v %cd%:/app --rm pyopera_pyopera /bin/bash  
 docker compose -f docker-compose.yml build  
 docker run --rm pyopera_pyopera ~/.local/share/pypoetry/venv/bin/poetry run coverage run -m pytest tests  
+docker build -t cabreratoxy/pyopera:0.0.1 .  
 
 ```
 poetry run python -m pip install -r requirements.txt  
@@ -27,3 +28,4 @@ TODO: Don't repeat the library name in the Dockerfile
 TODO: Automate black, isort, pylint, coverage, pytest on build or push.  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
 ~~TODO: Auto docstring generating? -- used autodocstring extension for vscode~~  
+TODO: How to autobuild the base image the CI/CD will work with  
