@@ -16,9 +16,8 @@ jobs:
             black . --check
             isort --check --diff .
             pylint $(find . -name "*.py" | xargs)
-            coverage run -m pytest tests
-            coverage report
-            coverage html
+            coverage run --source pyopera -m pytest
+            coverage report --skip-empty --fail-under=85
       - store_artifacts:
           path: htmlcov
 
