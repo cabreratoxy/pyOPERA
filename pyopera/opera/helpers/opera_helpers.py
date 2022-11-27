@@ -10,5 +10,5 @@ def format_endpoints_input(endpoints: list) -> str:
     Returns:
         str: endpoints with dashes that could be used on a CLI
     """
-    dashed_endpoints = [f'-{endpoint}' for endpoint in endpoints]
+    dashed_endpoints = [f"-{endpoint}" for endpoint in endpoints]
     return ",".join(dashed_endpoints)
