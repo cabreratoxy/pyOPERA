@@ -5,7 +5,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cabreratoxy/pyopera
+      - image: cabreratoxy/pyopera:0.0.2
     steps:
       - checkout
       - python/install-packages:
