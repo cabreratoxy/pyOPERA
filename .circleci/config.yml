@@ -68,4 +68,3 @@ workflows:
       - deploy-to-pypi:
           requires:
             - hold
-          type: approval
