@@ -20,15 +20,16 @@ docker run --rm pyopera_pyopera /bin/bash -c 'poetry run coverage run -m pytest 
 ```
 
 
-~~TODO: Fully install poetry in the container (maybe use the long name as a variable for now)~~
-TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)  
-~~TODO: Documentation using Sphinx (make sure original repo/builders are credited)  ~~
+
 TODO: Start adding the wrapper code and files - in progress  
 TODO: Benchmarking with airspeed velocity  
 TODO: Don't repeat the library name in the Dockerfile  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
 TODO: Test TestPypi package locally  
 TODO: Add actual documentation in this readme  
+~~TODO: Fully install poetry in the container (maybe use the long name as a variable for now)~~
+~~TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)~~
+~~TODO: Documentation using Sphinx (make sure original repo/builders are credited)  ~~
 ~~TODO: Auto semantic versioning with poetry too~~    
 ~~TODO: Create a python package around the Matlab package (the base files) using Poetry~~  
 ~~TODO: Formatting/Linting/Coverage~~  
