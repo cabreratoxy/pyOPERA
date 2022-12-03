@@ -13,9 +13,9 @@ jobs:
       - run:
           name: Lint/Formatting/Testing/Coverage
           command: |
-            black . --check
-            isort --check --diff .
-            pylint $(find . -name "*.py" | xargs)
+            black . --check --exclude="docs/"
+            isort --check --diff . --skip docs/
+            pylint $(find . -name "*.py" | xargs) --ignore-paths docs/
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85
       # - run:

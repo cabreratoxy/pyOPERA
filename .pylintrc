@@ -1,1 +1,2 @@
-[MESSAGES CONTROL]
+[MASTER]
+ignore=docs/*
