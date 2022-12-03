@@ -61,7 +61,11 @@ workflows:
           filters:
             branches:
               only: main
-      - deploy-to-pypi:
+      - hold:
+          type: approval
           requires:
             - build-and-test
+      - deploy-to-pypi:
+          requires:
+            - hold
           type: approval
