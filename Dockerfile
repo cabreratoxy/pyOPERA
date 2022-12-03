@@ -7,8 +7,9 @@ RUN pip install -r requirements.txt
 VOLUME /app
 
 COPY . .
-RUN apt-get update && apt-get install zip unzip libxtst6 libxt6 default-jre wget curl -y
+RUN apt-get update && apt-get install zip unzip libxtst6 libxt6 default-jre wget curl make -y
 RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH="${PATH}:/root/.local/share/pypoetry/venv/bin"
 RUN wget https://github.com/NIEHS/OPERA/releases/download/v2.9.1/libOPERA2.9_Py.tar.gz
 
 RUN tar -xvf libOPERA2.9_Py.tar.gz
