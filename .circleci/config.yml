@@ -23,6 +23,8 @@ jobs:
       #     command: 
 
   deploy-to-testpy:
+    # requires:
+    #   - build-and-test
     docker:
       - image: cabreratoxy/pyopera:0.0.2
     steps:
@@ -35,6 +37,8 @@ jobs:
             poetry publish --repository testpypi --build -u ${PYPI_USERNAME} -p ${TEST_PYPI}
   
   deploy-to-pypi:
+    # requires:
+    #   - build-and-test
     docker:
       - image: cabreratoxy/pyopera:0.0.2
     steps:
@@ -45,10 +49,6 @@ jobs:
           command: |
             poetry config repositories.pypi https://upload.pypi.org/legacy/
             poetry publish --repository pypi --build -u ${PYPI_USERNAME} -p ${PYPI}
-    # type: approval
-    # requires:
-    #   - build-and-test
-    #   - deploy-to-testpy
 
 
 workflows:
@@ -56,7 +56,12 @@ workflows:
     jobs:
       - build-and-test
       - deploy-to-testpy:
+          requires:
+            - build-and-test
           filters:
             branches:
               only: main
-      - deploy-to-pypi
+      - deploy-to-pypi:
+          requires:
+            - build-and-test
+          type: approval
