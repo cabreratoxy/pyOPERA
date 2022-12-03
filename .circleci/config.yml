@@ -68,3 +68,6 @@ workflows:
       - deploy-to-pypi:
           requires:
             - hold
+          filters:
+            branches:
+              only: main
