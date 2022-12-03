@@ -22,14 +22,38 @@ jobs:
       #     name: Deploy to Test Pypi
       #     command: 
 
-  # deploy-to-testpy:
-  #   docker:
-  #     - image: cabreratoxy/pyopera:0.0.1
-  #   steps:
-  #     - checkout
+  deploy-to-testpy:
+    docker:
+      - image: cabreratoxy/pyopera:0.0.2
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Test Pypi
+          # Add autoversioning here
+          command: |
+            poetry config repositories.testpypi https://test.pypi.org/legacy/
+            poetry publish --repository testpypi --build -u ${PYPI_USERNAME} -p ${TEST_PYPI}
+  
+    deploy-to-pypi:
+    docker:
+      - image: cabreratoxy/pyopera:0.0.2
+    type: approval
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Pypi
+          # Add autoversioning here
+          command: |
+            poetry config repositories.pypi https://upload.pypi.org/legacy/
+            poetry publish --repository pypi --build -u ${PYPI_USERNAME} -p ${PYPI}
 
 
 workflows:
   test-package:
     jobs:
       - build-and-test
+      - deploy-to-testpy:
+          filters:
+            branches:
+              only: main
+      - deploy-to-pypi
