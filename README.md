@@ -21,6 +21,7 @@ docker run --rm pyopera_pyopera /bin/bash -c 'poetry run coverage run -m pytest 
 
 
 
+TODO: poetry is not including the additional files with the library
 TODO: Start adding the wrapper code and files - in progress  
 TODO: Benchmarking with airspeed velocity  
 TODO: Don't repeat the library name in the Dockerfile  
