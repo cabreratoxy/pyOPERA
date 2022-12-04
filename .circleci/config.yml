@@ -15,7 +15,7 @@ jobs:
           command: |
             black . --check --exclude="docs/"
             isort --check --diff . --skip docs/
-            pylint $(find . -name "*.py" | xargs) --ignore-paths docs/
+            pylint $(find pyopera -name "*.py" | xargs)
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85
 
