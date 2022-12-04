@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyopera"
-version = "0.1.6"
+version = "0.1.7"
 description = "The NIH OPERA suite of models with Python specific functionality"
 authors = ["Manuel Cabrera <cabrera.manuel555@gmail.com>"]
 readme = "README.md"
