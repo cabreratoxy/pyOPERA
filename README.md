@@ -29,6 +29,7 @@ TODO: Test TestPypi package locally
 TODO: Add actual documentation in this readme
 TODO: Add the original library folder into the folder structure  
 TODO: Build deployment process for base image  
+TODO: Automate versioning
 ~~TODO: Fully install poetry in the container (maybe use the long name as a variable for now)~~  
 ~~TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)~~  
 ~~TODO: Documentation using Sphinx (make sure original repo/builders are credited)  ~~  
