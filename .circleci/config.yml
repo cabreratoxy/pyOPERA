@@ -18,13 +18,8 @@ jobs:
             pylint $(find . -name "*.py" | xargs) --ignore-paths docs/
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85
-      # - run:
-      #     name: Deploy to Test Pypi
-      #     command: 
 
   deploy-to-testpy:
-    # requires:
-    #   - build-and-test
     docker:
       - image: cabreratoxy/pyopera:0.0.2
     steps:
@@ -33,12 +28,11 @@ jobs:
           name: Deploy to Test Pypi
           # Add autoversioning here
           command: |
+            mv /usr/local/bin/OPERA/application/libOPERA_Py /app/libOPERA_Py
             poetry config repositories.testpypi https://test.pypi.org/legacy/
             poetry publish --repository testpypi --build -u ${PYPI_USERNAME} -p ${TEST_PYPI}
   
   deploy-to-pypi:
-    # requires:
-    #   - build-and-test
     docker:
       - image: cabreratoxy/pyopera:0.0.2
     steps:
@@ -47,6 +41,7 @@ jobs:
           name: Deploy to Pypi
           # Add autoversioning here
           command: |
+            mv /usr/local/bin/OPERA/application/libOPERA_Py /app/libOPERA_Py
             poetry config repositories.pypi https://upload.pypi.org/legacy/
             poetry publish --repository pypi --build -u ${PYPI_USERNAME} -p ${PYPI}
 

@@ -4,6 +4,7 @@ version = "0.1.5"
 description = "The NIH OPERA suite of models with Python specific functionality"
 authors = ["Manuel Cabrera <cabrera.manuel555@gmail.com>"]
 readme = "README.md"
+include = ["liOPERA_Py"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
