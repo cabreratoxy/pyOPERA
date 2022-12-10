@@ -18,6 +18,19 @@ jobs:
             pylint $(find pyopera -name "*.py" | xargs)
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85
+  
+  publish-docker-image:
+    docker:
+      - image: circleci/python
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Build and push Docker image
+          command: |
+            echo ${CIRCLE_BUILD_NUM}
+            if [ git diff --exit-code Dockerfile ]; then dockerfiles/build_docker.sh; else echo "Dockerfile did not change" fi
 
   deploy-to-testpy:
     docker:
@@ -27,8 +40,8 @@ jobs:
       - run:
           name: Deploy to Test Pypi
           # Add autoversioning here
+          # poetry version patch
           command: |
-            poetry version patch
             poetry config repositories.testpypi https://test.pypi.org/legacy/
             poetry publish --repository testpypi --build -u ${PYPI_USERNAME} -p ${TEST_PYPI}
   
@@ -40,8 +53,8 @@ jobs:
       - run:
           name: Deploy to Pypi
           # Add autoversioning here
+          # poetry version patch
           command: |
-            poetry version patch
             poetry config repositories.pypi https://upload.pypi.org/legacy/
             poetry publish --repository pypi --build -u ${PYPI_USERNAME} -p ${PYPI}
 
