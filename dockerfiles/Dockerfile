@@ -14,7 +14,7 @@ RUN wget -O /tmp/libOPERA2.9_Py.tar.gz https://github.com/NIEHS/OPERA/releases/d
 RUN ls
 
 # RUN chmod 777 libOPERA2.9_Py.tar.gz
-RUN tar -xvf /tmp/libOPERA2.9_Py.tar.gz
+RUN tar -xvf /tmp/libOPERA2.9_Py.tar.gz -C /tmp
 RUN /tmp/libOPERA2_Py/OPERA2.9_Py_mcr.install -agreeToLicense yes -mode silent
 
 WORKDIR /usr/local/bin/OPERA/application
