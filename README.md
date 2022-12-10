@@ -1,4 +1,5 @@
 # pyOPERA
+[![asv](http://img.shields.io/badge/benchmarked%20by-asv-blue.svg?style=flat)](http://your-url-here/)
 Full python implementation of the NIH OPERA suite of models  
 docker run -it -v %cd%:/app --rm pyopera_pyopera /bin/bash  
 docker compose -f docker-compose.yml build  
