@@ -63,6 +63,7 @@ workflows:
   test-package:
     jobs:
       - build-and-test
+      - publish-docker-image
       - deploy-to-testpy:
           requires:
             - build-and-test
