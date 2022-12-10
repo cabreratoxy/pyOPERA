@@ -30,7 +30,7 @@ jobs:
           name: Build and push Docker image
           command: |
             echo ${CIRCLE_BUILD_NUM}
-            if [ git diff --exit-code Dockerfile ]; then dockerfiles/build_docker.sh; else echo "Dockerfile did not change" fi
+            if [ git diff --exit-code Dockerfile ]; then dockerfiles/build_docker.sh; else echo "Dockerfile did not change"; fi
 
   deploy-to-testpy:
     docker:
