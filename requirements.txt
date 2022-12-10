@@ -5,4 +5,5 @@ coverage
 pytest
 sphinx
 furo
+asv
 # looking for libOPERA_Py? It is built from source in the image.
