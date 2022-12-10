@@ -17,20 +17,22 @@ poetry build
 poetry config repositories.testpypi https://test.pypi.org/legacy/  
 
 docker run --rm pyopera_pyopera /bin/bash -c 'poetry run coverage run -m pytest tests'   
+if [ git diff --exit-code Dockerfile ]; then dockerfiles/build_docker.sh; fi
 ```
 
 
 
-TODO: poetry is not including the additional files with the library  
+~~TODO: poetry is not including the additional files with the library~~
 TODO: Start adding the wrapper code and files - in progress  
 TODO: Benchmarking with airspeed velocity  
 TODO: Don't repeat the library name in the Dockerfile  
 TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
 TODO: Test TestPypi package locally  
 TODO: Add actual documentation in this readme  
-TODO: Add the original library folder into the folder structure  (manual for now, eventually upload it as a build artifact or similar)  
+~~TODO: Add the original library folder into the folder structure  (manual for now, eventually upload it as a build artifact or similar)~~
 TODO: Build deployment process for base image  
 TODO: Automate versioning  
+TODO: Find out how to trigger the docker image build step when the file changes  
 ~~TODO: Fully install poetry in the container (maybe use the long name as a variable for now)~~  
 ~~TODO: Create CI/CD for package in TestPypi and the prod Pypi (CircleCI maybe?)~~  
 ~~TODO: Documentation using Sphinx (make sure original repo/builders are credited)~~  
