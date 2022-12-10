@@ -8,8 +8,8 @@ docker build -t cabreratoxy/pyopera:0.0.1 .
 
 ```
 poetry run python -m pip install -r requirements.txt  
-poetry run black . --exclude="docs/" 
-poetry run isort . --skip docs/  
+poetry run black . --exclude={docs/,libOPERA_Py/,.asv/}
+poetry run isort . --skip={docs/,libOPERA_Py/,.asv/} 
 poetry run pylint $(find pyopera -name "*.py" | xargs)
 poetry run pytest tests    
 poetry run coverage run --source pyopera -m pytest  
