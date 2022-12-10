@@ -5,7 +5,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cabreratoxy/pyopera:0.0.2
+      - image: cabreratoxy/pyopera
     steps:
       - checkout
       - python/install-packages:
@@ -36,7 +36,7 @@ jobs:
 
   deploy-to-testpy:
     docker:
-      - image: cabreratoxy/pyopera:0.0.2
+      - image: cabreratoxy/pyopera
     steps:
       - checkout
       - run:
@@ -49,7 +49,7 @@ jobs:
   
   deploy-to-pypi:
     docker:
-      - image: cabreratoxy/pyopera:0.0.2
+      - image: cabreratoxy/pyopera
     steps:
       - checkout
       - run:
