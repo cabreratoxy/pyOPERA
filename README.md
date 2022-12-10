@@ -24,9 +24,9 @@ if [ git diff --exit-code Dockerfile ]; then dockerfiles/build_docker.sh; fi
 
 
 TODO: Test TestPypi package locally  
-TODO: Benchmarking with airspeed velocity  
+TODO: Benchmarking with airspeed velocity (struggling to make it work without a setup.py)  
 TODO: Don't repeat the library name in the Dockerfile  
-TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now  
+~~TODO: Struggling to run commands inside Docker from the host, will run commands from inside container for now~~
 TODO: Add actual documentation in this readme  
 TODO: Automate versioning  
 TODO: Find out how to trigger the docker image build step when the file changes  

@@ -28,7 +28,7 @@ jobs:
           name: Deploy to Test Pypi
           # Add autoversioning here
           command: |
-            mv /usr/local/bin/OPERA/application/libOPERA_Py /app/pyopera/libOPERA_Py
+            poetry version patch
             poetry config repositories.testpypi https://test.pypi.org/legacy/
             poetry publish --repository testpypi --build -u ${PYPI_USERNAME} -p ${TEST_PYPI}
   
@@ -41,7 +41,7 @@ jobs:
           name: Deploy to Pypi
           # Add autoversioning here
           command: |
-            mv /usr/local/bin/OPERA/application/libOPERA_Py /app/pyopera/libOPERA_Py
+            poetry version patch
             poetry config repositories.pypi https://upload.pypi.org/legacy/
             poetry publish --repository pypi --build -u ${PYPI_USERNAME} -p ${PYPI}
 
