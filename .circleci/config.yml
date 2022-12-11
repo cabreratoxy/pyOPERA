@@ -32,7 +32,7 @@ jobs:
             chmod 777 dockerfiles/build_docker.sh
             echo ${CIRCLE_BUILD_NUM}
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            if [ "git diff --exit-code dockerfiles/Dockerfile"==1 ]; then dockerfiles/build_docker.sh; else echo "Dockerfile did not change"; fi
+            dockerfiles/build_docker.sh
 
   deploy-to-testpy:
     docker:
