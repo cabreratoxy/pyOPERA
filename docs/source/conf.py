@@ -10,7 +10,7 @@ sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "pyOPERA"
+project = "PyOPERA"
 copyright = "2022, Manuel Cabrera"
 author = "Manuel Cabrera"
 release = "0.1.14"

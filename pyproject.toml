@@ -3,6 +3,7 @@ name = "pyopera"
 version = "0.1.14"
 description = "The NIH OPERA suite of models with Python specific functionality"
 authors = ["Manuel Cabrera <cabrera.manuel555@gmail.com>"]
+license = "MIT"
 readme = "README.md"
 include = ["libOPERA_Py/*"]
 
