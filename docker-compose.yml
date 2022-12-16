@@ -2,6 +2,6 @@ services:
   pyopera:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfiles/Dockerfile
     volumes:
       - /.:/app
