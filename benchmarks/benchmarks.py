@@ -7,7 +7,7 @@ from pyopera.opera.opera import easy_opera
 
 class EasyOperaBenchmarks:
     """Memory, and time benchmarks for easy_opera()"""
-
+    timeout = 999.0
     def setup(self):
         """Common code between benchmarks"""
         root_dir = os.path.split(os.path.dirname(__file__))[0]
