@@ -6,8 +6,10 @@ from pyopera.opera.opera import easy_opera
 
 
 class EasyOperaBenchmarks:
-    """Memory, and time benchmarks for easy_opera()"""
+    """Memory, and time benchmarks"""
+
     timeout = 999.0
+
     def setup(self):
         """Common code between benchmarks"""
         root_dir = os.path.split(os.path.dirname(__file__))[0]
@@ -18,9 +20,9 @@ class EasyOperaBenchmarks:
         self.endpoints = ["logp", "mp"]
 
     def time_easy_opera(self):
-        """Times the easy_opera function"""
+        """Times the function"""
         easy_opera(self.smi_file, self.output_file, self.endpoints)
 
     def mem_easy_opera(self):
-        """Gathers memory data on the easy_opera function"""
+        """Gathers memory data on the function"""
         easy_opera(self.smi_file, self.output_file, self.endpoints)
