@@ -25,4 +25,4 @@ class EasyOperaBenchmarks:
 
     def mem_easy_opera(self):
         """Gathers memory data on the function"""
-        easy_opera(self.smi_file, self.output_file, self.endpoints)
+        return easy_opera(self.smi_file, self.output_file, self.endpoints)

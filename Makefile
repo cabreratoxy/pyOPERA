@@ -29,9 +29,11 @@ test:
 	poetry run coverage report --skip-empty --fail-under=85
 
 run_benchmarks:
-	poetry run asv run --python=same
+	poetry run asv run --verbose --show-stderr
 
 get_benchmark_results:
+	poetry run asv show 252454ff
+	poetry run asv compare -m 5f48c53c2ea4  252454ff 03ba5808
 	poetry run asv publish
 	poetry run asv preview
 

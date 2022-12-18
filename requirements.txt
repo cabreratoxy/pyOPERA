@@ -6,4 +6,5 @@ pytest
 sphinx
 furo
 asv
-virtualenv
+virtualenv # for asv
+poetry2setup # for asv
