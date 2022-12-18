@@ -13,10 +13,6 @@ The `OPERA <https://ntp.niehs.nih.gov/whatwestudy/niceatm/comptox/ct-opera/opera
 `a repo of OPERA models <https://github.com/kmansouri/OPERA>`_ using MATLAB, this project uses the output of the NIH OPERA open-source project and converts it to a full Python package 
 that is as usable as possible by Python developers.
 
-.. note::
-
-   This project is under active development.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
