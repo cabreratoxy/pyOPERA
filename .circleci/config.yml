@@ -13,8 +13,8 @@ jobs:
       - run:
           name: Lint/Formatting/Testing/Coverage
           command: |
-            black . --check --exclude={docs/,libOPERA_Py/}
-            isort --check --diff . --skip={docs/,libOPERA_Py/}
+            black . --check --exclude={docs/,libOPERA_Py/,".asv/"}
+            isort --check --diff .
             pylint $(find pyopera -name "*.py" | xargs)
             coverage run --source pyopera -m pytest
             coverage report --skip-empty --fail-under=85

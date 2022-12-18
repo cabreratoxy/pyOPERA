@@ -1,32 +1,28 @@
-# Write the benchmarking functions here.
-# See "Writing benchmarks" in the asv docs for more information.
+import os
+import sys
+
+sys.path.append("/app")
+from pyopera.opera.opera import easy_opera
 
 
-class TimeSuite:
-    """
-    An example benchmark that times the performance of various kinds
-    of iterating over dictionaries in Python.
-    """
+class EasyOperaBenchmarks:
+    """Memory, and time benchmarks"""
+
+    timeout = 999.0
 
     def setup(self):
-        self.d = {}
-        for x in range(500):
-            self.d[x] = None
+        """Common code between benchmarks"""
+        root_dir = os.path.split(os.path.dirname(__file__))[0]
+        self.smi_file = os.path.join(root_dir, "tests", "test_files", "Sample_50.smi")
+        self.output_file = os.path.join(
+            root_dir, "tests", "test_files", "Pred_Sample_50.csv"
+        )
+        self.endpoints = ["logp", "mp"]
 
-    def time_keys(self):
-        for key in self.d.keys():
-            pass
+    def time_easy_opera(self):
+        """Times the function"""
+        easy_opera(self.smi_file, self.output_file, self.endpoints)
 
-    def time_values(self):
-        for value in self.d.values():
-            pass
-
-    def time_range(self):
-        d = self.d
-        for key in range(500):
-            x = d[key]
-
-
-class MemSuite:
-    def mem_list(self):
-        return [0] * 256
+    def mem_easy_opera(self):
+        """Gathers memory data on the function"""
+        return easy_opera(self.smi_file, self.output_file, self.endpoints)
