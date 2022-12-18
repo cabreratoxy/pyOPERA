@@ -13,7 +13,7 @@ sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 project = "PyOPERA"
 copyright = "2022, Manuel Cabrera"
 author = "Manuel Cabrera"
-release = "0.1.14"
+release = "0.2.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
