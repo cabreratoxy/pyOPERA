@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyopera"
-version = "0.2.0"
+version = "0.2.1"
 description = "The NIH OPERA suite of models with Python specific functionality"
 authors = ["Manuel Cabrera <cabrera.manuel555@gmail.com>"]
 license = "MIT"
