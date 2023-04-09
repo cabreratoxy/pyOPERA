@@ -9,7 +9,7 @@ build:
 	docker compose -f docker-compose.yml build  
 
 run_image_windows:
-	docker run -it -v %cd%:/app -p 8080:8080 --rm pyopera-pyopera /bin/bash
+	docker run -it -v %cd%:/app -p 8080:8080 --rm pyopera_pyopera /bin/bash
 
 
 # Run various commands inside running docker image

@@ -1,7 +1,7 @@
 """Helpers for the easy_opera wrapper"""
 
 
-def format_endpoints_input(endpoints: list) -> str:
+def format_inputs(endpoints: list) -> str:
     """Converts list of input endpoints into command line inputs.
 
     Args:

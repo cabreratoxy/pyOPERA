@@ -1,5 +1,5 @@
 """Test format_endpoints_input"""
-from pyopera.opera.helpers.opera_helpers import format_endpoints_input
+from pyopera.opera.helpers.opera_helpers import format_inputs
 
 
 class TestFormatEndpointsInput:
@@ -8,7 +8,7 @@ class TestFormatEndpointsInput:
     def test_converts_input_correctly(self):
         """Tests that format_endpoints_input formats endpoints correctly"""
         endpoints = ["logp", "mp"]
-        endpoints_list = format_endpoints_input(endpoints)
+        endpoints_list = format_inputs(endpoints)
         assert isinstance(endpoints_list, list)
         assert ["-logp", "-mp"] == endpoints_list
 
