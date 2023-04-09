@@ -41,3 +41,9 @@ class TestOpera:
         smi_file, output_file = opera_inputs
         results = easy_opera(smi_file, output_file, SAMPLE_OF_ENDPOINTS_TOGETHER)
         assert len(results) > 0
+
+    def test_opera_returns_predictions_using_all_flag(self, opera_inputs):
+        """easy_opera finishes successfully with the all models flag."""
+        smi_file, output_file = opera_inputs
+        results = easy_opera(smi_file, output_file, all=True)
+        assert len(results) > 0

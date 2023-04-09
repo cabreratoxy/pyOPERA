@@ -1,12 +1,12 @@
-"""Test format_endpoints_input"""
+"""Test format_inputs"""
 from pyopera.opera.helpers.opera_helpers import format_inputs
 
 
 class TestFormatEndpointsInput:
-    """For format_endpoints_input()"""
+    """For format_inputs()"""
 
     def test_converts_input_correctly(self):
-        """Tests that format_endpoints_input formats endpoints correctly"""
+        """Tests that format_inputs formats endpoints correctly"""
         endpoints = ["logp", "mp"]
         endpoints_list = format_inputs(endpoints)
         assert isinstance(endpoints_list, list)
