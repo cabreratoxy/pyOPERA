@@ -10,4 +10,6 @@ def format_inputs(endpoints: list) -> str:
     Returns:
         list: endpoints with dashes that could be used on a CLI
     """
+    if endpoints is None:
+        endpoints = []
     return [f"-{endpoint}" for endpoint in endpoints]

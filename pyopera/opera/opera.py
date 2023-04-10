@@ -6,7 +6,7 @@ import libOPERA_Py as OPERA
 from .helpers.opera_helpers import format_inputs
 
 
-def easy_opera(smi_file: str, output_file: str, endpoints: list = [], all: bool = False) -> dict:
+def easy_opera(smi_file: str, output_file: str, endpoints: list = None) -> dict:
     """Wrapper function to run the OPERA MATLAB model with ease.
 
     Args:
@@ -19,4 +19,6 @@ def easy_opera(smi_file: str, output_file: str, endpoints: list = [], all: bool 
     """
     opera = OPERA.initialize()
     formatted_endpoints = format_inputs(endpoints)
-    return opera.OPERA("-s", smi_file, "-o", output_file, *formatted_endpoints, "-v", 1, "-a")
+    return opera.OPERA(
+        "-s", smi_file, "-o", output_file, *formatted_endpoints, "-v", 1, "-a"
+    )
